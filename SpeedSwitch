@@ -15,7 +15,7 @@ getgenv().moose = game.Players.LocalPlayer:GetMouse()
 getgenv().Speed = nil
 getgenv().bitch = false
 moose.KeyUp:connect(function(key)
-if key == KeyBind then
+if key == Key then
 if bitch == false then
     getgenv().bitch = true
 getgenv().CurrentSpeed = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed
@@ -26,5 +26,4 @@ game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = CurrentSpeed
 end
 end
 end)
-
 
