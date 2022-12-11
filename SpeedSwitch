@@ -11,7 +11,7 @@ end)
 getgenv().Key = "z"
 getgenv().Speedtoswitchto = 30 -- cant go neg :(
 getgenv().CurrentSpeed = nil
-getgenv().moose = game.Players.LocalPlayer:GetMouse()
+getgenv().zeus = game.Players.LocalPlayer:GetMouse()
 getgenv().Speed = nil
 getgenv().bitch = false
 moose.KeyUp:connect(function(key)
