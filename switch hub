@@ -1,52 +1,93 @@
--- note for oooga booga. this is the single kill npc. dont switch up the two stupid fuck
+local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
+local w = library:CreateWindow("THE") -- Creates the window
 
-getgenv().jigger = false
-local hi = Instance.new("Sound")
-hi.Name = "Sound"
-hi.SoundId = "http://www.roblox.com/asset/?id=9114759339"
-hi.Volume = 10
-hi.Looped = false
-hi.archivable = false
-hi.Parent = game.Workspace
+local b = w:CreateFolder("Switch hub") -- Creates the folder(U will put here your buttons,etc)
 
+b:Button("Lag Switch",function()
+local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
+local w = library:CreateWindow("saa3") -- Creates the window
 
+local b = w:CreateFolder("saa3") -- Creates the folder(U will put here your buttons,etc)
 
-local Mouse = game:GetService("Players").LocalPlayer:GetMouse()
-Mouse.KeyDown:connect(function(key)
-if key == "z" then
+b:Box("Lag KeyBind","string",function(value) -- "number" or "string"
+getgenv().zzz = value
+end)
 
-getgenv().jigger = true
-local Anim = Instance.new("Animation")
-     Anim.AnimationId = "rbxassetid://148840371"
-     local bruh = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
-	bruh:Play()
-bruh:AdjustSpeed(10)	
-	while jigger == true do
-
-hi:Play()
-wait(0.2)
+getgenv().zzz = "z"
+getgenv().moose = game.Players.LocalPlayer:GetMouse()
+getgenv().itch = false
+moose.KeyUp:connect(function(key)
+if key == zzz then
+if itch == false then
+    getgenv().itch = true
+settings():GetService("NetworkSettings").IncomingReplicationLag = 10000
+else
+getgenv().itch = false
+settings():GetService("NetworkSettings").IncomingReplicationLag = 0
 end
+end
+end)
+end)
 
+b:Button("Gravity Switch",function()
+local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
+local w = library:CreateWindow("saa") -- Creates the window
 
+local b = w:CreateFolder("saa") -- Creates the folder(U will put here your buttons,etc)
+b:Box("Gravity","number",function(value) -- "number" or "string"
+getgenv().Gravitytoswitchto = value
+end)
+b:Box("KeyBind","string",function(value) -- "number" or "string"
+getgenv().KeyBind = value
+end)
+getgenv().KeyBind = "z"
+getgenv().Gravitytoswitchto = 30 -- cant go neg :(
+
+getgenv().Mouse = game.Players.LocalPlayer:GetMouse()
+getgenv().CurrentGravity = nil
+getgenv().switch = false
+Mouse.KeyUp:connect(function(key)
+if key == KeyBind then
+if switch == false then
+    getgenv().switch = true
+getgenv().CurrentGravity = game.Workspace.Gravity
+game.Workspace.Gravity = Gravitytoswitchto
+else
+getgenv().switch = false
+game.Workspace.Gravity = CurrentGravity
+end
 end
 end)
 
-if game.Players.LocalPlayer.Character.Humanoid.RigType.Name ~= "R6" then
+end)
 
-                           game:GetService('StarterGui'):SetCore('SendNotification', {
-       Title = 'Hey',
-       Text = "you need to be R6",
-       Duration = 1
-   })    
+b:Button("Speed Switch",function()
+local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
+local w = library:CreateWindow("saa2") -- Creates the window
+
+local b = w:CreateFolder("saa2") -- Creates the folder(U will put here your buttons,etc)
+b:Box("Speed","number",function(value) -- "number" or "string"
+getgenv().Speedtoswitchto = value
+end)
+b:Box("KeyBind","string",function(value) -- "number" or "string"
+getgenv().Key = value
+end)
+getgenv().Key = "z"
+getgenv().Speedtoswitchto = 30 -- cant go neg :(
+getgenv().CurrentSpeed = nil
+getgenv().zeus = game.Players.LocalPlayer:GetMouse()
+getgenv().Speed = nil
+getgenv().bitch = false
+zeus.KeyUp:connect(function(key)
+if key == Key then
+if bitch == false then
+    getgenv().bitch = true
+getgenv().CurrentSpeed = game.Players.LocalPlayer.Character.Humanoid.WalkSpeed
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Speedtoswitchto
+else
+getgenv().bitch = false
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = CurrentSpeed
 end
-
-
-
-Mouse.KeyDown:connect(function(key)
-if key == "x" then
-getgenv().jigger = false
-for i,v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()) do
-	v:Stop()
 end
-end
+end)
 end)
